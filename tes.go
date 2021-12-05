@@ -145,9 +145,9 @@ func (req *Request) SetHeader(header Header) {
 
 func main() {
     s := Session()
-    ts := time.Now().UnixNano()
+    ts := time.Now().UnixMilli()
     for i:=0;i<20;i++ {
         s.Get("https://shopee.co.id")
     }
-    fmt.Println(float64(time.Now().UnixNano()-ts)/float64(time.Nanosecond))
+    fmt.Println(float32(time.Now().UnixMilli()-ts)/1e3)
 }
